@@ -1,0 +1,9 @@
+<form action="{% url 'create' %}" method="post">
+    <!--유효토큰 검증-->
+    {% csrf_token %}
+    <!--  <table> 내부에 하단 내용 입력하면 views에서 전달받은 form에 따라 생성 -->
+    <table>
+        {{ form.as_table }}
+    </table>
+    <button type="submit">제출</button>
+</form>

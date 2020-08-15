@@ -1,0 +1,12 @@
+{% extends 'first/base.html' %}
+{% load static %}
+{% block content %}
+    <p>Hello World!</p>
+    <!--{% static 'image.jpg' %} : static 폴더 내의 image.jpg 실행}-->
+    <img src="{% static 'first/image.jpg' %}" alt="명빵"/>
+
+    <p>{{ current_date }}</p>
+    <p>{{ current_date|date:'Y년 m월 d일 H시 i분 s초' }}</p>
+    <!--{% url 'select' %} : urls.py의 name=select인 path 실행}-->
+    <a href="{% url 'select' %}">시작하기</a>
+{% endblock %}

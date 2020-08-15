@@ -1,0 +1,17 @@
+{% extends 'third/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <form action="{% url 'restaurant-update' id=id%}" method="post">
+        <!--   잘못된 요청 검증     -->
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{ form.instance.id }}">
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit">수정완료</button>
+    </form>
+</div>
+
+
+{% endblock %}
